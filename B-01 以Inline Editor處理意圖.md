@@ -1,4 +1,4 @@
-# 06 以Inline Editor處理意圖
+# B-01 以Inline Editor處理意圖
 
 ## (1) 設計一個對話
 
