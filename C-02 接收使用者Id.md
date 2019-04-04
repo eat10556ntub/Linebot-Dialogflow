@@ -56,8 +56,7 @@ app.post('/dialogflow', express.json(), (req, res) => {
     // 檢查認證內容
     if (user !== 'user' || password !== 'abcdabcdabcd') {
         return fail(res);
-    }
-    
+    }    
     
     //------------------------------------
     // 處理請求/回覆的Dialogflow代理人
