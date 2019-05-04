@@ -34,6 +34,15 @@
 }
 ```
 
+## 取得firebaseConfig
+```
+在Project Overview的"Settings"中, 選擇"專案設定", 
+再選"將 Firebase 加入您的網路應用程式":
+ -> 將 Firebase 新增至應用程式
+ -> 選取平台即可開始使用(Web)
+ -> 得到firebaseConfig資料. 
+```
+
 ## (1) index.js
 
 ``` js
@@ -47,12 +56,7 @@ const {WebhookClient} = require('dialogflow-fulfillment');
 const {Text, Card, Image, Suggestion, Payload} = require('dialogflow-fulfillment'); 
 
 //-----------------------------------------------------------
-// *設定自己的firebase連線:
-//   1. 以下資料在Project Overview的"Settings"中,
-//   2. 選擇"專案設定", 再選"將 Firebase 加入您的網路應用程式":
-//        2-1. 將 Firebase 新增至應用程式
-//        2-2. 選取平台即可開始使用(Web)
-//        2-3. 將得到以下firebaseConfig的資料. 
+// 設定自己的firebaseConfig連線資訊:
 //-----------------------------------------------------------
 var firebase = require('firebase');
  
