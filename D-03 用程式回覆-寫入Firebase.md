@@ -100,17 +100,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         agent.add('動作:' + action);
         agent.add('使用者ID:' + userId);
         agent.add('時間戳記:' + timestamp);      
-        agent.add('參數:' + special);
-      
-        //傳送自訂訊息(目前只能有一個自訂訊息)
-        var lineMessage = {
-            "type": "sticker",
-            "packageId": "1",
-            "stickerId": "1"
-        };       
-        
-        var payload = new Payload('LINE', lineMessage, {sendAsMessage: true});
-        agent.add(payload);      
+        agent.add('參數:' + special);      
         
         //寫資料到firebase的資料庫中(自動生成ID)     
         return firebase.database().ref('special')
@@ -148,62 +138,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         agent.add('使用者ID:' + userId);
         agent.add('時間戳記:' + timestamp);      
         agent.add('參數:' + recommendation);
-
-        //傳送自訂訊息(目前只能有一個自訂訊息)
-        var lineMessage = {
-            "type": "template",
-            "altText": "這是一個Carousel圖文選單樣板",
-            "template": {
-                "type": "carousel",
-                "columns":[{
-                    "thumbnailImageUrl": "https://tomlin-app-1.herokuapp.com/imgs/f01.jpg",
-                    "imageBackgroundColor": "#FFFFFF",
-                    "title": "麵類",
-                    "text": "請選擇麵類餐點",
-                    "actions": [{
-                        "type": "message",
-                        "label": "想吃牛肉麵",
-                        "text": "牛肉麵"
-                    },
-                    {
-                        "type": "message",
-                        "label": "想吃大魯麵",
-                        "text": "大魯麵"
-                    },
-                    {
-                        "type": "message",
-                        "label": "想吃蕃茄麵",
-                        "text": "蕃茄麵"
-                    }]
-                },
-                {
-                    "thumbnailImageUrl": "https://tomlin-app-1.herokuapp.com/imgs/f05.jpg",
-                    "imageBackgroundColor": "#FFFFFF",
-                    "title": "飯類",
-                    "text": "請選擇飯類餐點",
-                    "actions": [{
-                        "type": "message",
-                        "label": "想吃蛋炒飯",
-                        "text": "蛋炒飯"
-                    },
-                    {
-                        "type": "message",
-                        "label": "想吃燴飯",
-                        "text": "燴飯"
-                    },
-                    {
-                        "type": "message",
-                        "label": "想吃海鮮炒飯",
-                        "text": "海鮮炒飯"
-                    }]
-                }],
-                "imageAspectRatio": "square",
-                "imageSize": "cover"
-            }
-        };
-        
-        var payload = new Payload('LINE', lineMessage, {sendAsMessage: true});
-        agent.add(payload);
       
         //寫資料到firebase的資料庫中(自己指定ID)    
         return firebase.database().ref('recommendation/' + timestamp)
