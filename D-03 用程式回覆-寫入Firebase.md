@@ -107,14 +107,12 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
             "type": "sticker",
             "packageId": "1",
             "stickerId": "1"
-        };
+        };       
         
         var payload = new Payload('LINE', lineMessage, {sendAsMessage: true});
-        agent.add(payload);    
-      
-        //------------------------------------------------
-        // 寫資料到firebase的資料庫中(自動生成ID)
-        //------------------------------------------------        
+        agent.add(payload);      
+        
+        //寫資料到firebase的資料庫中(自動生成ID)     
         return firebase.database().ref('special')
             .push({
                 recordDatetime:timestamp,
@@ -127,8 +125,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
             })
             .catch(error => {
                 agent.add('新增失敗' + error);
-            });
-        //------------------------------------------------        
+            });              
     }  
 
     //------------------------------------
@@ -208,9 +205,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         var payload = new Payload('LINE', lineMessage, {sendAsMessage: true});
         agent.add(payload);
       
-        //------------------------------------------------
-        // 寫資料到firebase的資料庫中(自己指定ID)
-        //------------------------------------------------        
+        //寫資料到firebase的資料庫中(自己指定ID)    
         return firebase.database().ref('recommendation/' + timestamp)
             .set({
                 recordDatetime:timestamp,
@@ -223,8 +218,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
             })
             .catch(error => {
                 agent.add('新增失敗' + error);
-            });
-        //------------------------------------------------           
+            });      
     } 
   
     //------------------------------------
