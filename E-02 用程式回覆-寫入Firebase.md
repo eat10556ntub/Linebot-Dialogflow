@@ -14,7 +14,8 @@ const {WebhookClient} = require('dialogflow-fulfillment');
 const {Text, Card, Image, Suggestion, Payload} = require('dialogflow-fulfillment'); 
 
 //-----------------------------------------------------------
-// 設定自己的firebaseConfig連線資訊:
+// 設定自己的firebaseConfig連線資訊.
+// 在 "Project Overview" -> "專案設定"中
 //-----------------------------------------------------------
 var firebase = require('firebase');
  
