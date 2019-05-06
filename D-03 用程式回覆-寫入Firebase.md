@@ -4,12 +4,12 @@
 ## 機器人設計
 ```
 |__ Intents
-|      |__ ask today's special
+|      |__ ask today's special (詢問今日特餐)
 |      |        .
 |      |        |__ Fulfillment
 |      |                |__ Enable webhook call for this intent (開啟)
 |      |
-|      |__ ask chef's recommendation
+|      |__ ask chef's recommendation (詢問主廚推薦)
 .               .
 .               |__ Fulfillment
 .                       |__ Enable webhook call for this intent (開啟)
