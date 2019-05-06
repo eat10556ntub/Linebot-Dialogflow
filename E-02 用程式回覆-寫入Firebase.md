@@ -71,7 +71,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                 meal:meal,
                 food:food,
                 query:queryText
-            })
+            }).on('value')
             .then(snapshot => {
                 agent.add('Ok, 新增完成');
             })
