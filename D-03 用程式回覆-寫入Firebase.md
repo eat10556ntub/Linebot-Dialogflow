@@ -109,7 +109,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                 user:userId,
                 intent:special,
                 query:queryText
-            }).on('value')
+            }).once('value')
             .then(snapshot => {
                 agent.add('Ok, 新增完成');
             })
@@ -146,7 +146,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                 user:userId,
                 intent:recommendation,
                 query:queryText
-            }).on('value')
+            }).once('value')
             .then(snapshot => {
                 agent.add('Ok, 新增完成');
             })
