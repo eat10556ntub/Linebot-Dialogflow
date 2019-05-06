@@ -174,7 +174,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 ``` json
 {
   "name": "dialogflowFirebaseFulfillment",
-  "description": "更改了dialogflow-fulfillment版本",
+  "description": "更改了dialogflow-fulfillment版本, 也增加firebase套件",
   "version": "0.0.1",
   "private": true,
   "license": "Apache Version 2.0",
