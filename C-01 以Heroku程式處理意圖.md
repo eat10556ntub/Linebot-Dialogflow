@@ -1,4 +1,4 @@
-# C-01 以Heroku程式處理意圖
+# C-01 以Heroku程式處理, 在Dialogflow設定
 
 
 ```
@@ -12,6 +12,13 @@
 |__ Fulfillment     
        |__ Webhook (啟動 ENABLED)    
               |__ URL*  -->  https://(自己的應用程式名稱).herokuapp.com/dialogflow              
+```
+
+## 程式結構
+```
+ |__ <app>
+       |__ index.js
+       |__ package.json
 ```
 
 ## (1) index.js
