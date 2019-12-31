@@ -1,6 +1,7 @@
 # C-02 接收使用者Id
 
 
+## 在DialogFlow的設定
 ```
 |__ Intents
 |      |__ Default Welcome Intent
@@ -16,14 +17,23 @@
               |__ BASIC AUTH  (Enter username) user    (Enter password) abcdabcdabcd                  
 ```
 
-### 追加auth-header外掛
+
+## 程式結構
+```
+ |__ <app>
+       |__ index.js
+       |__ package.json
+```
+
+
+## 追加auth-header外掛
 ```
 npm install auth-header --save
 ```
 
 ## (1) index.js
 
-```javascript
+``` javascript
 "use strict";
 
 const express = require('express');
@@ -103,7 +113,7 @@ var server = app.listen(process.env.PORT || 3000, function() {
 
 ## (2) package.json 
 
-```javascript
+``` javascript
 {
   "name": "app10",
   "version": "0.0.0",
@@ -122,5 +132,28 @@ var server = app.listen(process.env.PORT || 3000, function() {
     "dialogflow-fulfillment": "^0.5.0"
   }
 }
+```
 
+
+
+## 上傳至Heroku
+```
+(1) (網頁)已下載及安裝Node.js
+(2) 已安裝Heroku CLI, npm install heroku -g
+(3) (網頁https://git-scm.com/downloads)已下載及安裝git CLI
+(4) (網頁)已登入Github
+(5) (網頁)已登入Line Developer
+(6) (網頁)已登入Heroku
+
+(假設程式在D槽)
+(7) d:
+    cd app
+(8) heroku login -i
+(9) git config --global user.email "自己在git的email帳號"
+(10) git init
+(11) heroku git:remote -a [Heroku上的應用程式名稱]
+---------------------------------------------------
+(12) git add .
+(13) git commit -am "myApp"
+(14) git push heroku master -f
 ```
