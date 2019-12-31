@@ -93,16 +93,20 @@ var server = app.listen(process.env.PORT || 3000, function() {
 ```
 (1) (網頁)已下載及安裝Node.js
 (2) 已安裝Heroku CLI, npm install heroku -g
-(3) (網頁)已下載及安裝git CLI
+(3) (網頁https://git-scm.com/downloads)已下載及安裝git CLI
 (4) (網頁)已登入Github
 (5) (網頁)已登入Line Developer
 (6) (網頁)已登入Heroku
-(7) heroku login -i
-(8) git config --global user.email "自己在git的email帳號"
-(9) git init
-(10) heroku git:remote -a [Heroku上的應用程式名稱]
+
+(假設程式在D槽)
+(7) d:
+    cd app
+(8) heroku login -i
+(9) git config --global user.email "自己在git的email帳號"
+(10) git init
+(11) heroku git:remote -a [Heroku上的應用程式名稱]
 ---------------------------------------------------
-(11) git add .
-(12) git commit -am "myApp"
-(13) git push heroku master -f
+(12) git add .
+(13) git commit -am "myApp"
+(14) git push heroku master -f
 ```
