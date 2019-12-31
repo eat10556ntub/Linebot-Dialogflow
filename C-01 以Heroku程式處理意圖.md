@@ -109,4 +109,7 @@ var server = app.listen(process.env.PORT || 3000, function() {
 (12) git add .
 (13) git commit -am "myApp"
 (14) git push heroku master -f
+---------------------------------------------------
+(15) 查看heroku終端機畫面
+     heroku logs --tail
 ```
