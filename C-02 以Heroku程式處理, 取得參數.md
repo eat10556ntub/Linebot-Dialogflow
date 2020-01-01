@@ -16,15 +16,16 @@
 .               .       |__ 120001名字 
 .               .           ------ PARAMETER NAME(stuno)  ENTITY(@sys.any)
 .               .
-.               |__ Entity
-.               .       |__ name, 名字;姓名;大名
-.               .
 .               |__ Action and Parameter
 .               .       |__ REQUIRED(V)    PARAMETER NAME(stuno)    ENTITY(@sys.any)    VALUE($stuno) 
 .               .
 .               .
 .               |__ Fulfillment
 .                       |__ Enable webhook call for this intent (開啟)
+.
+.
+|__ Entities
+.      |__ name, 名字;姓名;大名
 .
 .
 |__ Fulfillment     
