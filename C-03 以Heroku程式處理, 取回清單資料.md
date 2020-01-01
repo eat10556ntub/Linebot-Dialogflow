@@ -12,27 +12,34 @@
 .      |__ ask name
 .      |        |__ Training Phrases
 .      |        .       |__ 請問120001的名字 
-.      |        .               ------ PARAMETER NAME(stuno)  ENTITY(@sys.any)
+.      |        .       |__ 問120001名字 
+.      |        .       |__ 120001名字 
+.      |        .           ------ PARAMETER NAME(stuno)  ENTITY(@sys.any)
 .      |        .
 .      |        |__ Action and Parameter
 .      |        .       |__ REQUIRED(V)    PARAMETER NAME(stuno)    ENTITY(@sys.any)    VALUE($stuno) 
-.      |        .
 .      |        .
 .      |        |__ Fulfillment
 .      |                |__ Enable webhook call for this intent (開啟)
 .      .
 .      |__ ask score
 .               |__ Training Phrases
-.               .       |__ 請問120001的成績 
-.               .               ------ PARAMETER NAME(stuno)  ENTITY(@sys.any)
+.               .       |__ 請問120001的分數 
+.               .       |__ 問120001分數 
+.               .       |__ 120001分數 
+.               .           ------ PARAMETER NAME(stuno)  ENTITY(@sys.any)
 .               .
 .               |__ Action and Parameter
 .               .       |__ REQUIRED(V)    PARAMETER NAME(stuno)    ENTITY(@sys.any)    VALUE($stuno) 
 .               .
-.               .
 .               |__ Fulfillment
 .                       |__ Enable webhook call for this intent (開啟)
 .      
+.
+|__ Entities
+.      |__ name, 名字;姓名
+.      |__ score, 分數;成績
+.
 .
 |__ Fulfillment     
        |__ Webhook (啟動 ENABLED)    
