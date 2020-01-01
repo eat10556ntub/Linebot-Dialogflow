@@ -56,8 +56,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         const food = parameters.food;     
       
        //回應參數    
-        agent.add('時間戳記:' + timestamp); 
-        agent.add('使用者ID:' + userId); 
+        //agent.add('時間戳記:' + timestamp); 
+        //agent.add('使用者ID:' + userId); 
         agent.add('餐別參數:' + meal);      
         agent.add('食物別參數:' + food);           
         agent.add('傳入訊息:' + queryText);     
@@ -65,8 +65,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         //寫資料到firebase的資料庫中的函式(自動生成ID)  
         var write_logs = function(timestamp, userId, meal, food, queryText){
             return firebase.database().ref('logs').push({
-                recordDatetime:timestamp,
-                user:userId,
+                //recordDatetime:timestamp,
+                //user:userId,
                 meal:meal,
                 food:food,
                 query:queryText              
