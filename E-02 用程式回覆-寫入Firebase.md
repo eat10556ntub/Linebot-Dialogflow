@@ -59,8 +59,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         agent.add('請求封包內文:' + body);      
         agent.add('傳入訊息:' + queryText);
         agent.add('動作:' + action);
-        agent.add('使用者ID:' + userId);
-        agent.add('時間戳記:' + timestamp);      
+        //agent.add('使用者ID:' + userId);
+        //agent.add('時間戳記:' + timestamp);      
         agent.add('餐別參數:' + meal);      
         agent.add('食物別參數:' + food); 
       
