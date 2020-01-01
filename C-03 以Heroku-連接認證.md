@@ -73,11 +73,6 @@ app.post('/dialogflow', express.json(), (req, res) => {
     //------------------------------------  
     const agent = new WebhookClient({request: req, response: res})
 
-    console.log('觀察以下物件********************');
-    console.log(req.headers);
-    console.log(JSON.stringify(req.body));
-    console.log('*******************************');
-
     //------------------------------------
     // 處理歡迎意圖
     //------------------------------------     
@@ -86,7 +81,7 @@ app.post('/dialogflow', express.json(), (req, res) => {
 
         agent.add('傳入訊息:'+req.body.queryResult.queryText);
         agent.add('傳入參數:'+req.body.queryResult.parameters);
-        // 以下payload的內容已經Google Dialogflow已不再傳送
+        // 以下payload的內容Google Dialogflow已不再傳送
         //agent.add('使用者的LineId:'+req.body.originalDetectIntentRequest.payload.data.source.userId);
         //agent.add('timestamp:'+req.body.originalDetectIntentRequest.payload.data.timestamp);        
     }
@@ -108,7 +103,6 @@ var server = app.listen(process.env.PORT || 3000, function() {
     const port = server.address().port;
     console.log("正在監聽埠號:", port);
 });
-
 ```
 
 
