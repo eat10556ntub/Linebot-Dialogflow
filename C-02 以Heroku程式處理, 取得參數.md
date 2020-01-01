@@ -12,7 +12,12 @@
 .      |__ ask name
 .               |__ Training Phrases
 .               .       |__ 請問120001的名字 
-.               .               ------ PARAMETER NAME(stuno)  ENTITY(@sys.any)
+.               .       |__ 問120001名字 
+.               .       |__ 120001名字 
+.               .           ------ PARAMETER NAME(stuno)  ENTITY(@sys.any)
+.               .
+.               |__ Entity
+.               .       |__ name, 名字;姓名;大名
 .               .
 .               |__ Action and Parameter
 .               .       |__ REQUIRED(V)    PARAMETER NAME(stuno)    ENTITY(@sys.any)    VALUE($stuno) 
