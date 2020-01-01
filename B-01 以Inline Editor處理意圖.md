@@ -76,8 +76,9 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         agent.add('傳入訊息:'+request.body.queryResult.queryText);
         agent.add('action:'+request.body.queryResult.action);
         agent.add('parameters:'+request.body.queryResult.parameters);
-        agent.add('userId:'+request.body.originalDetectIntentRequest.payload.data.source.userId);
-        agent.add('timestamp:'+request.body.originalDetectIntentRequest.payload.data.timestamp);
+	//使用者資訊已不支援
+        //agent.add('userId:'+request.body.originalDetectIntentRequest.payload.data.source.userId);
+        //agent.add('timestamp:'+request.body.originalDetectIntentRequest.payload.data.timestamp);
         
         agent.add(new Card({
             title: '表頭',
@@ -103,8 +104,9 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         agent.add('request.body:'+JSON.stringify(request.body));      
         agent.add('傳入訊息:'+request.body.queryResult.queryText);
         agent.add('action:'+request.body.queryResult.action);
-        agent.add('userId:'+request.body.originalDetectIntentRequest.payload.data.source.userId);
-        agent.add('timestamp:'+request.body.originalDetectIntentRequest.payload.data.timestamp);      
+	//使用者資訊已不支援
+        //agent.add('userId:'+request.body.originalDetectIntentRequest.payload.data.source.userId);
+        //agent.add('timestamp:'+request.body.originalDetectIntentRequest.payload.data.timestamp);  
         
         agent.add('參數:'+request.body.queryResult.parameters.name);
         agent.add('參數:'+request.body.queryResult.parameters.firstname);
