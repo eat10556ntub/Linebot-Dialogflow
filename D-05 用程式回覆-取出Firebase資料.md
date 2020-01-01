@@ -98,6 +98,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                     agent.add(data.description);
                   
                     //傳送自訂訊息(目前只能有一個自訂訊息)
+                    // payload目前不支援
+                    /*
                     var lineMessage = {
                         "type": "image",
                         "originalContentUrl": data.picture,
@@ -105,7 +107,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                     };
         
                     var payload = new Payload('LINE', lineMessage, {sendAsMessage: true});
-                    agent.add(payload);                                      
+                    agent.add(payload);    
+                    */
                 }
             });
     }  
@@ -132,6 +135,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                     agent.add(data.description);
                   
                     //傳送自訂訊息(目前只能有一個自訂訊息)
+                    // payload目前不支援
+                    /*
                     var lineMessage = {
                         "type": "image",
                         "originalContentUrl": data.picture,
@@ -139,7 +144,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                     };
         
                     var payload = new Payload('LINE', lineMessage, {sendAsMessage: true});
-                    agent.add(payload);                                      
+                    agent.add(payload);      
+                    */
                 }
             });    
     } 
