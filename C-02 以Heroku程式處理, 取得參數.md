@@ -19,7 +19,6 @@
 .               |__ Action and Parameter
 .               .       |__ REQUIRED(V)    PARAMETER NAME(stuno)    ENTITY(@sys.any)    VALUE($stuno) 
 .               .
-.               .
 .               |__ Fulfillment
 .                       |__ Enable webhook call for this intent (開啟)
 .
