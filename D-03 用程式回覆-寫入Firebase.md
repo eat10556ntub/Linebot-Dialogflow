@@ -89,8 +89,9 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         const body = JSON.stringify(request.body);
         const queryText = request.body.queryResult.queryText;
         const action = request.body.queryResult.action;
-        const userId = request.body.originalDetectIntentRequest.payload.data.source.userId;
-        const timestamp = request.body.originalDetectIntentRequest.payload.data.timestamp;
+        //使用者資訊已不支援 
+        //const userId = request.body.originalDetectIntentRequest.payload.data.source.userId;
+        //const timestamp = request.body.originalDetectIntentRequest.payload.data.timestamp;
         const parameters = request.body.queryResult.parameters;                
         const special = parameters.special;
         
@@ -99,8 +100,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         agent.add('傳入訊息:' + queryText);
         agent.add('動作:' + action);
         agent.add('使用者ID:' + userId);
-        agent.add('時間戳記:' + timestamp);      
-        agent.add('參數:' + special);      
         
         //寫資料到firebase的資料庫中(自動生成ID)     
         return firebase.database().ref('special')
@@ -126,8 +125,9 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         const body = JSON.stringify(request.body);
         const queryText = request.body.queryResult.queryText;
         const action = request.body.queryResult.action;
-        const userId = request.body.originalDetectIntentRequest.payload.data.source.userId;
-        const timestamp = request.body.originalDetectIntentRequest.payload.data.timestamp;
+        //使用者資訊已不支援 
+        //const userId = request.body.originalDetectIntentRequest.payload.data.source.userId;
+        //const timestamp = request.body.originalDetectIntentRequest.payload.data.timestamp;
         const parameters = request.body.queryResult.parameters;                
         const recommendation = parameters.recommendation;
         
@@ -135,8 +135,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         agent.add('請求封包內文:' + body);      
         agent.add('傳入訊息:' + queryText);
         agent.add('動作:' + action);
-        agent.add('使用者ID:' + userId);
-        agent.add('時間戳記:' + timestamp);      
         agent.add('參數:' + recommendation);
       
         //寫資料到firebase的資料庫中(自己指定ID)    
