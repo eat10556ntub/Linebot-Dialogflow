@@ -48,8 +48,9 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         const body = JSON.stringify(request.body);
         const queryText = request.body.queryResult.queryText;
         const action = request.body.queryResult.action;
-        const userId = request.body.originalDetectIntentRequest.payload.data.source.userId;
-        const timestamp = request.body.originalDetectIntentRequest.payload.data.timestamp;
+        //使用者資訊已不支援 
+        //const userId = request.body.originalDetectIntentRequest.payload.data.source.userId;
+        //const timestamp = request.body.originalDetectIntentRequest.payload.data.timestamp;
         const parameters = request.body.queryResult.parameters;                
         const meal = parameters.meal;
         const food = parameters.food;     
