@@ -25,7 +25,7 @@
 .
 .
 |__ Entities
-.      |__ name, 名字;姓名;大名
+.      |__ name, 名字;姓名
 .
 .
 |__ Fulfillment     
