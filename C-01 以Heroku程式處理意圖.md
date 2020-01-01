@@ -49,7 +49,7 @@ app.post('/dialogflow', express.json(), (req, res) => {
             title: '窯烤披薩',
             imageUrl: 'https://tomlin-app-1.herokuapp.com/imgs/f01.jpg',
             text: '將少量的麵粉攤平，以180度烘烤10~15 分直到麵粉呈現淡淡的黃色並散發出堅果味',
-            buttonText: '按鈕上的文字',
+            buttonText: '網頁連結',
             buttonUrl: 'https://assistant.google.com/'       
         }));
 
