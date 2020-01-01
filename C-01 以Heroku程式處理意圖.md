@@ -28,6 +28,7 @@
 
 const express = require('express')
 const { WebhookClient } = require('dialogflow-fulfillment')
+const {Text, Card, Image, Suggestion, Payload} = require('dialogflow-fulfillment'); 
 const app = express()
 
 app.post('/dialogflow', express.json(), (req, res) => {
@@ -36,12 +37,24 @@ app.post('/dialogflow', express.json(), (req, res) => {
     //------------------------------------  
     const agent = new WebhookClient({request: req, response: res})
 
-
     //------------------------------------
     // 處理歡迎意圖
     //------------------------------------     
     function welcome(){
+        //回覆文字
         agent.add('歡迎你!!!');
+
+        //回覆卡片
+        agent.add(new Card({
+            title: '窯烤披薩',
+            imageUrl: 'https://tomlin-app-1.herokuapp.com/imgs/f01.jpg',
+            text: '將少量的麵粉攤平，以180度烘烤10~15 分直到麵粉呈現淡淡的黃色並散發出堅果味',
+            buttonText: '按鈕上的文字',
+            buttonUrl: 'https://assistant.google.com/'       
+        }));
+
+        //回覆圖片
+        agent.add(new Image('https://tomlin-app-1.herokuapp.com/imgs/f01.jpg')); 
     }
 
     //------------------------------------
@@ -61,7 +74,6 @@ var server = app.listen(process.env.PORT || 3000, function() {
     const port = server.address().port;
     console.log("正在監聽埠號:", port);
 });
-
 ```
 
 
