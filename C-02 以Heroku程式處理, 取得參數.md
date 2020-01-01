@@ -136,6 +136,7 @@ module.exports = {getStu};
 
 const express = require('express')
 const { WebhookClient } = require('dialogflow-fulfillment')
+const {Text, Card, Image, Suggestion, Payload} = require('dialogflow-fulfillment'); 
 const app = express()
 
 //增加引用函式
