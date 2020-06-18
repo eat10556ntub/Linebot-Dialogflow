@@ -81,9 +81,9 @@ app.post('/dialogflow', express.json(), (req, res) => {
 
         agent.add('傳入訊息:'+req.body.queryResult.queryText);
         agent.add('傳入參數:'+req.body.queryResult.parameters);
-        // 以下payload的內容Google Dialogflow已不再傳送
-        //agent.add('使用者的LineId:'+req.body.originalDetectIntentRequest.payload.data.source.userId);
-        //agent.add('timestamp:'+req.body.originalDetectIntentRequest.payload.data.timestamp);        
+
+        agent.add('使用者的LineId:'+req.body.originalDetectIntentRequest.payload.data.source.userId);
+        agent.add('timestamp:'+req.body.originalDetectIntentRequest.payload.data.timestamp);        
     }
 
     //------------------------------------
