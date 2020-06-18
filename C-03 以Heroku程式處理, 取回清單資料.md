@@ -242,9 +242,11 @@ app.post('/dialogflow', express.json(), (req, res) => {
     // 設定對話中各個意圖的函式對照
     //------------------------------------
     let intentMap = new Map();
+    
     intentMap.set('Default Welcome Intent', welcome);
     intentMap.set('ask name', askName);
-    intentMap.set('ask score', askScore);    
+    intentMap.set('ask score', askScore); 
+    
     agent.handleRequest(intentMap);
 })
 
