@@ -48,16 +48,16 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         const body = JSON.stringify(request.body);
         const queryText = request.body.queryResult.queryText;
         const action = request.body.queryResult.action;
-        //使用者資訊已不支援 
-        //const userId = request.body.originalDetectIntentRequest.payload.data.source.userId;
-        //const timestamp = request.body.originalDetectIntentRequest.payload.data.timestamp;
+       
+        const userId = request.body.originalDetectIntentRequest.payload.data.source.userId;
+        const timestamp = request.body.originalDetectIntentRequest.payload.data.timestamp;
         const parameters = request.body.queryResult.parameters;                
         const meal = parameters.meal;
         const food = parameters.food;     
       
-       //回應參數    
-        //agent.add('時間戳記:' + timestamp); 
-        //agent.add('使用者ID:' + userId); 
+        //回應參數    
+        agent.add('時間戳記:' + timestamp); 
+        agent.add('使用者ID:' + userId); 
         agent.add('餐別參數:' + meal);      
         agent.add('食物別參數:' + food);           
         agent.add('傳入訊息:' + queryText);     
