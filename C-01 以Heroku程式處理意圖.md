@@ -40,7 +40,7 @@ app.post('/dialogflow', express.json(), (req, res) => {
     //------------------------------------
     // 處理歡迎意圖
     //------------------------------------     
-    function welcome(){
+    function welcome(agent){
         //回覆文字
         agent.add('歡迎你!!!');
 
